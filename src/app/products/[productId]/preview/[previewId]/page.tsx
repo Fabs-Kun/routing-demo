@@ -5,11 +5,11 @@ function getRandomInt(count:number) {
 }
 
 export default async function previewDetails({params}: {params: Promise<{productId : string; previewId : string;}>}){
-    const random = getRandomInt(2);
+    // const random = getRandomInt(2);
 
-    if(random === 1){
-        throw new Error("Error loading preview...")
-    }
+    // if(random === 1){
+    //     throw new Error("Error loading preview...")
+    // }
     
     if (parseInt((await params).previewId) > 1000) {
         notFound()
