@@ -4,19 +4,19 @@ function getRandomInt(count:number) {
     return Math.floor(Math.random() * count);
 }
 
-export default function previewDetails({params}: {params: {productId : string; previewId : string;}}){
+export default async function previewDetails({params}: {params: Promise<{productId : string; previewId : string;}>}){
     const random = getRandomInt(2);
 
     if(random === 1){
         throw new Error("Error loading preview...")
     }
     
-    if (parseInt(params.previewId) > 1000) {
+    if (parseInt((await params).previewId) > 1000) {
         notFound()
     }
     return(
         <h1>
-            Review {params.previewId} for Product {params.productId}
+            Review {(await params).previewId} for Product {(await params).productId}
         </h1>
     )
 }
