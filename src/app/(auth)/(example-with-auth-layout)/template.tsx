@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname } from 'next/navigation';
 import "./style.css";
-import { useState } from "react";
+import { useState } from 'react';
 
 const navLinks = [
     { name: "Example-Register", href: "/example-register"},
